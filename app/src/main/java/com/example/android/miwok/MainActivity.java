@@ -19,6 +19,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,26 +29,49 @@ public class MainActivity extends AppCompatActivity {
 
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
-    }
 
-    public void openNumbersList(View view) {
-        Intent intent = new Intent(this, NumbersActivity.class);
-        startActivity(intent);
-    }
+        // Find the numbers view
+        TextView numbers = (TextView) findViewById(R.id.numbers);
+        if (null != numbers)
+            numbers.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(MainActivity.this, NumbersActivity.class);
+                    startActivity(intent);
+                }
+            });
 
-    public void openFamilyList(View view) {
-        Intent intent = new Intent(this, FamilyActivity.class);
-        startActivity(intent);
-    }
+        // Find the family view
+        TextView family = (TextView) findViewById(R.id.family);
+        if (null != family)
+            family.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(MainActivity.this, FamilyActivity.class);
+                    startActivity(intent);
+                }
+            });
 
-    public void openColorsList(View view) {
-        Intent intent = new Intent(this, ColorsActivity.class);
-        startActivity(intent);
-    }
+        // Find the colors view
+        TextView colors = (TextView) findViewById(R.id.colors);
+        if (null != colors)
+            colors.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(MainActivity.this, ColorsActivity.class);
+                    startActivity(intent);
+                }
+            });
 
-    public void openPhrasesList(View view) {
-        Intent intent = new Intent(this, PhrasesActivity.class);
-        startActivity(intent);
+        // Find the colors view
+        TextView phrases = (TextView) findViewById(R.id.phrases);
+        if (null != phrases)
+            phrases.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(MainActivity.this, PhrasesActivity.class);
+                    startActivity(intent);
+                }
+            });
     }
-
 }
