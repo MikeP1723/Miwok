@@ -33,7 +33,7 @@ public class NumbersActivity extends AppCompatActivity {
 
         ListView listView = (ListView) findViewById(R.id.list);
 
-        if (null != listView)
+        if (null != listView) // TODO: Find out how to prevent errors here.
             listView.setAdapter(adapter);
     }
 }
